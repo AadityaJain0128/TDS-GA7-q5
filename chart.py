@@ -56,10 +56,11 @@ plt.title('Support Response Time Distribution by Channel', fontsize=18, weight='
 plt.xlabel('Support Channel', fontsize=12, weight='bold')
 plt.ylabel('Response Time (Minutes)', fontsize=12, weight='bold')
 ax.set_xticklabels(ax.get_xticklabels(), rotation=0) # Keep x-axis labels horizontal
+plt.tight_layout(pad=0.5) # Use tight_layout() to prevent labels from being cut off
 
 # --- Export ---
-# Save the chart as a PNG with exactly 512x512 pixel dimensions
-# bbox_inches='tight' ensures all elements fit within the saved image
-plt.savefig('chart.png', dpi=64, bbox_inches='tight')
+# Save the chart as a PNG with exactly 512x512 pixel dimensions.
+# Note: bbox_inches='tight' is removed to ensure exact output dimensions.
+plt.savefig('chart.png', dpi=64)
 
 print("Successfully generated and saved 'chart.png'.")
